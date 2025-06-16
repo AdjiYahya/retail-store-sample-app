@@ -2,7 +2,7 @@ pipeline {
   agent any
   environment {
     DOCKERHUB_USER = 'adjiyahya'
-    DOCKERHUB_CREDS = 'AdjiSkywalker14'
+    DOCKERHUB_CREDS = 'docker-hub-creds'
   }
   stages {
     stage('Build & Push UI') {
