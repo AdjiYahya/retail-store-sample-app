@@ -3,6 +3,7 @@ pipeline {
   environment {
     DOCKERHUB_USER = 'adjiyahya'
     DOCKERHUB_CREDS = 'docker-hub-creds'
+    PATH = "/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin" // 👈 tambahkan ini
   }
   stages {
     stage('Build & Push UI') {
