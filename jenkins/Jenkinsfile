@@ -1,0 +1,19 @@
+pipeline {
+  agent any
+  environment {
+    DOCKERHUB_USER = 'adjiyahya'
+    DOCKERHUB_CREDS = 'AdjiSkywalker14'
+  }
+  stages {
+    stage('Build & Push UI') {
+      steps {
+        script {
+          docker.withRegistry('https://index.docker.io/v1/', DOCKERHUB_CREDS) {
+            def image = docker.build("${DOCKERHUB_USER}/retail-ui", "./src/ui")
+            image.push("latest")
+          }
+        }
+      }
+    }
+  }
+}
